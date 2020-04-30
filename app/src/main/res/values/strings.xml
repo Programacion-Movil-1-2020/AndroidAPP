@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Talent Land</string>
+    <string name="hello_blank_fragment">Hello blank Fragment</string>
+    <string name="inicio_frag_tv_que_es">¿Qué es Talent Land?</string>
+    <string name="inicio_frag_tv_que_es_resp">Talent land desde el año 2018, hace el evento más grande de comunidad tecnológica en México. En el gente apasionada por aprender, emprender e innovar se encuentran en un mismo lugar para escuchar a expertos de la industria que durante todo el dia comparten su conocimiento.</string>
+    <string name="inicio_frag_tv_por_que">¿Por qué asistir?</string>
+    <string name="inicio_frag_tv_por_que_resp">Porque eres ingeniero en sistemas y debes de estar constantemente en busca de nuevas tecnologias que te ayuden a estar a la vanguardia.
+Porque en México este evento es el mayor, quien reune a expertos de la industria tecnológica para que compartan contigo sus experiencias y las nuevas formas de explotar tu potencial.
+Porque en este evento conocerás personas que en el futuro pueden ser tus amigos, tus colegas, tus colaboradores y hasta tus socios.
+Porque en este año cuenta con 10 tierras de contenido y entre ellas esta Future Land, Healt Land, Developer Land, Gamer Land entre otras que seguro atraen tu atencion.</string>
+    <string name="inicio_frag_tv_info">Información de Jalisco Talent Land 2020</string>
+    <string name="inicio_frag_tv_info_resp">
+        \u0009 &#8226; Este es un evento abierto al publico en general en el que con solo pagar la inscripcion tienes acceso a todo el contenido\n
+        \u0009 &#8226; (Puedes adquirir tu entrada desde ya en nuestra pagina web).\n
+        \u0009 &#8226; Fecha: pues quien sabe, hasta que pase la contingencia .\n
+        \u0009 &#8226; Lugar: Expo Guadalajara, Guadalajara.\n
+        \u0009 &#8226; Dirección: Av. Mariano Otero #1499 CP. 44550, Guadalajara, Jalisco.</string>
+
+</resources>

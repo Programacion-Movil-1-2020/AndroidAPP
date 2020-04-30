@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="altoLogoSplash">90dp</dimen>
+    <dimen name="tbAlto">30dp</dimen>
+    <dimen name="cardCornerRadius">10dp</dimen>
+    <dimen name="altoIVHome">150dp</dimen>
+    <dimen name="tamanioTitulo">20sp</dimen>
+    <dimen name="marginHomeSubtitulo">10dp</dimen>
+    <dimen name="tamanioSubtitulo">15sp</dimen>
+</resources>
