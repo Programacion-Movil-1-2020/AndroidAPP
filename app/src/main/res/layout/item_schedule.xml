@@ -26,18 +26,7 @@
             android:textSize="@dimen/itemScheduleSubTitulo"
             android:textColor="@color/colorAccent"/>
     </LinearLayout>
-<!--    <LinearLayout-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_weight="1"-->
-<!--        android:layout_margin="5dp">-->
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="80dp"-->
-<!--            android:src="@drawable/banner_logo"-->
-<!--            android:gravity="right|top"-->
-<!--            android:scaleType="centerCrop"/>-->
-<!--    </LinearLayout>-->
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -65,13 +54,14 @@
             android:textSize="15sp"/>
         <TextView
             android:id="@+id/tvItemScheduleConferenceDescription"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:lines="1"
             android:text="Descripcion de la conferencia"
             android:textColor="@color/colorBlank"
-            android:textSize="@dimen/itemScheduleSubTitulo"/>
+            android:textSize="@dimen/itemScheduleSubTitulo"
+            android:background="@drawable/shape_topico"/>
 
 
     </LinearLayout>
