@@ -7,7 +7,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
+        <Toolbar
             android:id="@+id/tbMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -16,7 +16,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/tbAlto"
                 android:src="@drawable/logo"/>
-        </androidx.appcompat.widget.Toolbar>
+        </Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
     <RelativeLayout
         android:layout_width="match_parent"

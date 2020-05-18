@@ -36,7 +36,7 @@
                     android:background="@color/colorPrimary"
                     android:alpha="0.2"/>
                 <TextView
-                    android:id="@+id/tvScheduleConferenceDetail"
+                    android:id="@+id/tvScheduleConferenceDetailTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Titulo de la conferencia"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
-                        android:id="@+id/tvScheduleConferenceDetailHour"
+                        android:id="@+id/tvDetailConferenceHour"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="00:00"
@@ -67,7 +67,7 @@
                         android:layout_centerInParent="true"
                         android:layout_margin="5dp"/>
                     <TextView
-                        android:id="@+id/tvScheduleConferenceDetailSpeaker"
+                        android:id="@+id/tvDetailConferenceSpeaker"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Nombre Speaker"
@@ -78,7 +78,7 @@
                         android:layout_centerInParent="true"
                         android:layout_margin="5dp"/>
                     <TextView
-                        android:id="@+id/tvScheduleConferenceDetailTag"
+                        android:id="@+id/tvDetailConferenceTag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tag"
@@ -89,7 +89,7 @@
                         android:layout_centerInParent="true"
                         android:layout_margin="5dp"/>
                     <TextView
-                        android:id="@+id/tvScheduleConferenceDetailDescription"
+                        android:id="@+id/tvDetailConferenceDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Detalle de la conferencia"

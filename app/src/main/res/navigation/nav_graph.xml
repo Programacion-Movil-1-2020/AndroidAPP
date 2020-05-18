@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navHomeFragment"
-        android:name="com.itnl.expotech.ui.fragments.HomeFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/navScheduleFragment"
-        android:name="com.itnl.expotech.ui.fragments.ScheduleFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.ScheduleFragment"
         android:label="fragment_schedule"
         tools:layout="@layout/fragment_schedule" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/navSpeakersFragment"
-        android:name="com.itnl.expotech.ui.fragments.SpeakersFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.SpeakersFragment"
         android:label="fragment_speakers"
         tools:layout="@layout/fragment_speakers" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/navMapFragment"
-        android:name="com.itnl.expotech.ui.fragments.UbicationFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.UbicationFragment"
         android:label="fragment_ubication"
         tools:layout="@layout/fragment_ubication" >
         <action
@@ -49,19 +49,19 @@
     </fragment>
     <dialog
         android:id="@+id/speakersDetailFragmentDialog"
-        android:name="com.itnl.expotech.ui.fragments.SpeakersDetailDialogFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.SpeakersDetailDialogFragment"
         android:label="SpeakersDetailDialogFragment"
         tools:layout="@layout/fragment_speakers_detail_dialog"
         />
     <dialog
         android:id="@+id/scheduleDetailDialogFragment"
-        android:name="com.itnl.expotech.ui.fragments.ScheduleDetailDF"
+        android:name="com.itnl.expotech.view.ui.fragments.ScheduleDetailDF"
         android:label="ScheduleDetailDialogFragment"
         tools:layout="@layout/df_schedule_detail"
         />
     <dialog
         android:id="@+id/ubicationDetailFragmentDialog"
-        android:name="com.itnl.expotech.ui.fragments.UbicatioDetailDialogFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.UbicatioDetailDialogFragment"
         android:label="UbicatioDetailDialogFragment"
         tools:layout="@layout/fragment_ubicatio_detail_dialog"
         />
