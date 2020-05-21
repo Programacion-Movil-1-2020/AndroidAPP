@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 
@@ -22,7 +21,8 @@ import kotlinx.android.synthetic.main.fragment_speakers.*
 /**
  * A simple [Fragment] subclass.
  */
-class SpeakersFragment : Fragment() , SpeakerListener {
+class SpeakersFragment : Fragment() ,
+    SpeakerListener {
 
     private lateinit var speakerAdapter: SpeakerAdapter
     private lateinit var viewModel: SpeakersViewModel

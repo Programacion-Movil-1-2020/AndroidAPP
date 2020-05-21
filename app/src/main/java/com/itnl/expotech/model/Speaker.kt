@@ -1,6 +1,8 @@
 package com.itnl.expotech.model
 
-class Speaker {
+import java.io.Serializable
+
+class Speaker: Serializable {
     var name = ""
     var jobtitle = ""
     var workplace = ""

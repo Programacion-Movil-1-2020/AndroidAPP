@@ -49,19 +49,19 @@
     </fragment>
     <dialog
         android:id="@+id/speakersDetailFragmentDialog"
-        android:name="com.itnl.expotech.view.ui.fragments.SpeakersDetailDialogFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.SpeakersDetailFragmentDialog"
         android:label="SpeakersDetailDialogFragment"
         tools:layout="@layout/fragment_speakers_detail_dialog"
         />
     <dialog
         android:id="@+id/scheduleDetailDialogFragment"
-        android:name="com.itnl.expotech.view.ui.fragments.ScheduleDetailDF"
+        android:name="com.itnl.expotech.view.ui.fragments.ScheduleDetailDialogFragment"
         android:label="ScheduleDetailDialogFragment"
         tools:layout="@layout/df_schedule_detail"
         />
     <dialog
         android:id="@+id/ubicationDetailFragmentDialog"
-        android:name="com.itnl.expotech.view.ui.fragments.UbicatioDetailDialogFragment"
+        android:name="com.itnl.expotech.view.ui.fragments.UbicationDetailDialogFragment"
         android:label="UbicatioDetailDialogFragment"
         tools:layout="@layout/fragment_ubicatio_detail_dialog"
         />

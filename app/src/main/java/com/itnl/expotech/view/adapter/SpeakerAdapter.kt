@@ -15,8 +15,12 @@ class SpeakerAdapter(val speakerListener: SpeakerListener) : RecyclerView.Adapte
 
     private var listSpeakers = ArrayList<Speaker>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(
-        R.layout.item_speaker, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        ViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_speaker, parent, false
+            )
+        )
 
     override fun getItemCount() = listSpeakers.size
 

@@ -4,21 +4,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.google.firebase.firestore.FirebaseFirestore
 import com.itnl.expotech.R
+import com.itnl.expotech.model.Conference
+import com.itnl.expotech.model.Speaker
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.util.*
 
 // si aparece error, agregar esta importacion
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         setActionBar(findViewById(R.id.tbMain))
         confignav()
-/*
-        val jsonArr = JSONArray("[\n" +
+
+        /*val jsonArr = JSONArray("[\n" +
                 "            {\n" +
                 "                'biography' : 'Cesar Fajardo, creativo y content creator del equipo de Platzi, transforma las ideas en historias inspiradoras y contenidos innovadores que impactan al mundo para generar gracias, no solo likes, de nada sirve tu talento si no estas haciendo algo con el, de nada sirven tus habilidades si no tienes ideas para fusionarlas.',\n" +
                 "                'category' : 5,\n" +
@@ -176,28 +182,28 @@ class MainActivity : AppCompatActivity() {
 
         val jsonArr2 = JSONArray("[\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1164809000,\n" +
                 "                \"description\" : \"Yo les voy a hablar el día de hoy de un tema que si soy exitoso, contrario a lo que algunos de ustedes me conocen saben que juego muchos videojuegos y que trabajo con ellos, toda mi vida llevo 21 años hablando en público a lo largo de la industria de la tecnología y alrededor por supuesto de la oportunidad tremenda que los videojuegos, la realidad virtual y la realidad aumentada ofrecen, sigo convencido en ello y sigo trabajando en eso. Pero estoy aquí con otro sombrero, el día de hoy si soy exitoso van a terminar con dos sentimientos, un poco de miedo y sobretodo el miedo que desemboca en la acción.\",\n" +
                 "                \"speaker\" : \"Mario Valle\",\n" +
                 "                \"tag\" : \"Negocios\",\n" +
                 "                \"title\" : \"Ahorrar no te va a salvar del futuro\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1264809000,\n" +
                 "                \"description\" : \"En esta charla Erika Oregel del equipo de Platzi nos invita a explorar nueva forma de adquirir gustos y pasiones, nos invita a procrastinar de forma consciente. \",\n" +
                 "                \"speaker\" : \"Erika Oregel\",\n" +
                 "                \"tag\" : \"Procastinación\",\n" +
                 "                \"title\" : \"Procrastinar puede ser el alimento de tus futuras pasiones\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1364809000,\n" +
                 "                \"description\" : \"Periodismo en 2019: Constar historias no debe ser aburrido.\",\n" +
                 "                \"speaker\" : \"Veronica Calderón\",\n" +
                 "                \"tag\" : \"Periodismo\",\n" +
                 "                \"title\" : \"Periodismo en 2019: Constar historias no debe ser aburrido.\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1464809000,\n" +
                 "                \"description\" : \"Tener una marca personal es fundamental para tu desarrollo profesional. Construir un portafolio de proyectos y fortalecer tu presencia online te ayudará a resaltar para ampliar tus oportunidades laborales, conseguir un mejor empleo o crear tu propio negocio.\",\n" +
                 "                \"speaker\" : \"Rubén Gómez\",\n" +
                 "                \"tag\" : \"Diseño\",\n" +
@@ -211,63 +217,63 @@ class MainActivity : AppCompatActivity() {
                 "                \"title\" : \"Un 'gracias' vale más que un millón de views\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1664809000,\n" +
                 "                \"description\" : \"En esta charla Andrea Baba, CEO de FITco, nos explica cómo llevar una vida saludable sin muchos sacrificios para complementar tu carrera profesional. \",\n" +
                 "                \"speaker\" : \"Andrea Baba\",\n" +
                 "                \"tag\" : \"Firness\",\n" +
                 "                \"title\" : \"Una vida FIT te hace un mejor profesional\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1764809000,\n" +
                 "                \"description\" : \"A lo largo de mi presentación les contaré algunas historias para que nunca paren de aprender. Cada semana gracias al equipo increíble de Platzi a mi me encanta contar las noticias porque entender nuestra industria es aprender a dominarla solo cuando entendemos como esta pasando y como las grandes empresas están creando podemos ser parte de ésta transformación entonces algo que me divierte a mi es leer es compartir y es analizar algunas de estas noticias, a veces no hago tan buen trabajo, a veces entiendo 2 o 3 cosas que están pasando con el mundo, pero cada vez más estoy haciendo un esfuerzo porque estas noticias sean más locales.   \",\n" +
                 "                \"speaker\" : \"Christian Van Der Henst\",\n" +
                 "                \"tag\" : \"Motivacional\",\n" +
                 "                \"title\" : \"Diseñador, programador, creador y luego emprendedor\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1864809000,\n" +
                 "                \"description\" : \"En esta charla Nicolay Coral nos explica cómo construimos sentimientos a través del cúmulo de emociones repetitivas  y cómo al lograr identificar qué y quién despiertan nuestras emociones podemos desaprender a ser felices. \",\n" +
                 "                \"speaker\" : \"Nicolay Coral\",\n" +
                 "                \"tag\" : \"Felicidad\",\n" +
                 "                \"title\" : \"Desaprender a ser Feliz | Diferencia entre emociones y sentimientos\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 194809000,\n" +
                 "                \"description\" : \"Les quiero comentar de cómo se pueden convertir en un MVP, en el MVP que el mundo necesita, haciéndose una pregunta, ¿Quiénes saben que es un MVP?, quiero comentarles como poder hacer el MVP de su equipo de desarrollo.\",\n" +
                 "                \"speaker\" : \"Pablo Villanueva\",\n" +
                 "                \"tag\" : \"Desarrollo\",\n" +
                 "                \"title\" : \"Cómo convertirte en la persona más valiosa de una empresa\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1264809000,\n" +
                 "                \"description\" : \"Redefiniendo la competencia en el mercado financiero: Open Banking\",\n" +
                 "                \"speaker\" : \"Elina Corona\",\n" +
                 "                \"tag\" : \"Bank\",\n" +
                 "                \"title\" : \"Redefiniendo la competencia en el mercado financiero: Open Banking\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1164809000,\n" +
                 "                \"description\" : \"Somos una empresa enfocada en el desarrollo de aplicaciones móviles del lado de la ingeniería y tuvimos por primera vez a una diseñadora en el equipo, al principio la veíamos como un adherido al equipo, luego empezamos un proyecto y ahora vengo a comentarles lo que pasó con la comunicación con personas que son de otras áreas.\",\n" +
                 "                \"speaker\" : \"Jorge García\",\n" +
                 "                \"tag\" : \"Git\",\n" +
                 "                \"title\" : \"Git, la base de la colaboración mucho más allá del código\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1264809000,\n" +
                 "                \"description\" : \"Tuve una idea de negocio de vender las imágenes de un teléfono, más de 1 personas me dijo que es la idea más estúpida que haya escuchado, pero yo estaba viendo el futuro que los teléfonos estaban marcando tendencia y que quizá hace años el que uno pueda vender sus fotos a una empresa grande haya sido una locura, pero hoy en día puedes convertir la cámara de tu teléfono un negocio.\",\n" +
                 "                \"speaker\" : \"Manuel Villegas\",\n" +
                 "                \"tag\" : \"Emprendimiento\",\n" +
                 "                \"title\" : \"La cámara de tu teléfono puede ser un negocio\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1364809000,\n" +
                 "                \"description\" : \"En esta charla Ludwin Cuevas nos enseña cómo gestiona a un equipo de 20 personas en el quipo de producción audiovisual de Platzi y nos comparte 5 tips para lograrlo   Los tips que @winiberto nos comparte son:  - Contrata a personas mejores que tú. - Tener claras las expectativas - Reuniones recurrentes - Crear conexiones humanas - Pedir retroalimentación\",\n" +
                 "                \"speaker\" : \"Ludwin Cuevas\",\n" +
                 "                \"tag\" : \"Creative\",\n" +
                 "                \"title\" : \"5 consejos para liderar equipos grandes\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1464809000,\n" +
                 "                \"description\" : \"Uno de los ejercicios hechos por la mayoría de los speakers profesionales, para mejorar como dan un mensaje, la premisa es fácil, no poner atención en lo que están diciendo, sino en cómo lo están diciendo y vengo a compartirles algunas técnicas que aprendí.\",\n" +
                 "                \"speaker\" : \"Isis García\",\n" +
                 "                \"tag\" : \"Voz\",\n" +
@@ -281,14 +287,14 @@ class MainActivity : AppCompatActivity() {
                 "                \"title\" : \"Crear workshops para comprender, idear y decidir\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1664809000,\n" +
                 "                \"description\" : \"Hoy les voy a hablar de 5 formas de mentir con estadística.  Vamos a hablar de distintos métodos estadísticos que se utilizan y para que se utilizan en el diario vivir y tecnología.\",\n" +
                 "                \"speaker\" : \"Juan Pablo Rojas\",\n" +
                 "                \"tag\" : \"Estadística\",\n" +
                 "                \"title\" : \"5 formas de mentir (o ser engañado) con datos\"\n" +
                 "            },\n" +
                 "            {\n" +
-                "                \"datetime\" : 1564809000,\n" +
+                "                \"datetime\" : 1544809000,\n" +
                 "                \"description\" : \"Hoy vamos a hablar de como desarrollar tu carrera profesional pero en tecnología, porque hay otras carreras que tienen menos crecimiento que la carrera de tecnología, cuando ustedes trabajan en tecnología ustedes entran en una carrera que tiene desempleo negativo, una carrera que tiene la demanda más fuerte del mercado, si nosotros vemos los sueldos en los últimos años en tecnología, en el 2013 el desarrollador de software promedio en Latinoamérica ganaba alrededor de 1100 dólares, hoy en el 2018 el desarrollador de software promedio gana 1650 dólares, pero el top 25% de desarrolladores de software ganan 2500 dólares en promedio, normalmente el rango el gradiente de sueldos de los estudiantes de Platzi que estudian un año o más es de 1000 a 3500 dólares al mes en Latinoamérica.\",\n" +
                 "                \"speaker\" : \"Freddy Vega\",\n" +
                 "                \"tag\" : \"Motivacional\",\n" +
