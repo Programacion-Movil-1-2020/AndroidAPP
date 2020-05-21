@@ -24,7 +24,7 @@ class SpeakerAdapter(val speakerListener: SpeakerListener) : RecyclerView.Adapte
         val speaker = listSpeakers[position]
         holder.tvSpeakerName.text = speaker.name
         holder.tvSpeakerWork.text = speaker.workplace
-
+        //convertir url a imagen
         Glide.with(holder.itemView.context)
             .load(speaker.image)
             .apply(RequestOptions.circleCropTransform())

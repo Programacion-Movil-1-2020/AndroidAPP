@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.itnl.expotech.R
 import com.itnl.expotech.model.Conference
 import com.itnl.expotech.view.adapter.ScheduleAdapter
+import com.itnl.expotech.view.adapter.ScheduleListener
 import com.itnl.expotech.viewmodel.ScheduleViewModel
 import kotlinx.android.synthetic.main.fragment_schedule.*
 
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_schedule.*
 /**
  * A simple [Fragment] subclass.
  */
-class ScheduleFragment : Fragment() {
+class ScheduleFragment : Fragment(), ScheduleListener {
 
     private lateinit var scheduleAdapter: ScheduleAdapter
     private lateinit var viewModel: ScheduleViewModel
@@ -57,7 +58,7 @@ class ScheduleFragment : Fragment() {
         })
     }
 
-    fun onConferenceClicked(conference: Conference, position: Int) {
+    override fun onConferenceClicked(conference: Conference, position: Int) {
         val bundle = bundleOf("conference" to conference)
         findNavController().navigate(R.id.scheduleDetailDialogFragment, bundle)
     }
