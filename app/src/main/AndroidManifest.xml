@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_talent"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_talent_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -15,13 +15,15 @@
             android:value="AIzaSyDu6l4HeFJEm_W6jB_AAE1jO5zAFnk_gZU"
             />
 
-        <activity android:name="com.itnl.expotech.view.ui.activities.SplashScreenActivity"></activity>
-        <activity android:name="com.itnl.expotech.view.ui.activities.MainActivity">
+        <activity android:name="com.itnl.expotech.view.ui.activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.itnl.expotech.view.ui.activities.MainActivity">
+
         </activity>
     </application>
 
